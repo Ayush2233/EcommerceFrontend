@@ -9,12 +9,21 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ![home1](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/549e7ab8-9b81-4c39-a130-c74f1fdf962a)
 
 
+![signin](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/c2612018-3e90-4141-8ce3-b2c177b282a7)
 
 
+![signup](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/e0e88743-0b6e-46e5-b359-3964d00c0674)
+
+![product](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/be5a0b30-2cd1-49a9-a967-20d96d7aa632)
+
+![cart](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/47cda15b-3885-43e2-9a16-04f46e0b432c)
+
+![order](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/bf60e098-973f-4d28-980a-999b09dd0230)
 
 
+![ordderlist](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/f84e272a-1b55-46eb-9478-ffb096455f11)
 
-
+![orderstatus](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/b8f42a70-b99a-4e2b-812f-6336c039a6e6)
 
 
 
