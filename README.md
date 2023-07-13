@@ -9,28 +9,23 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 ![home1](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/8373a211-d536-41de-872a-fc9f11857eee)
 
-![signin](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/c2612018-3e90-4141-8ce3-b2c177b282a7)
+![signin](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/5d04c53e-09b2-4cac-b4b1-250a2eb876b0)
 
+![signup](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/7e9e0dc6-7545-451f-b6aa-f1bed73d12b1)
 
-![signup](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/e0e88743-0b6e-46e5-b359-3964d00c0674)
+![product](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/d79bfc31-3524-4ffd-a4fa-7c5b9c1609ea)
 
-![product](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/be5a0b30-2cd1-49a9-a967-20d96d7aa632)
+![cart](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/0e411def-711b-4f37-a172-4dbbabe42d21)
 
-![cart](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/47cda15b-3885-43e2-9a16-04f46e0b432c)
+![order](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/97526588-05b2-4119-9e15-653e5766e049)
 
-![order](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/bf60e098-973f-4d28-980a-999b09dd0230)
+![orderstatus](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/4edc6a8e-924a-4147-abf6-b0734a7e1a0a)
 
+![ordderlist](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/83be3c81-58ec-4a60-b5ed-37b13a968ae5)
 
-![ordderlist](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/f84e272a-1b55-46eb-9478-ffb096455f11)
+![buyerdash](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/1afb0e87-e7ca-4977-a90c-7093220a0643)
 
-![orderstatus](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/b8f42a70-b99a-4e2b-812f-6336c039a6e6)
-
-
-
-
-
-
-
+![sellerdash](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/f07f48dd-2bf8-428b-8fb2-4763e8d8fd4d)
 
 
 ## Code scaffolding
