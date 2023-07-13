@@ -6,6 +6,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 ## UI Screenshots
+![home1](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/549e7ab8-9b81-4c39-a130-c74f1fdf962a)
 
 
 
