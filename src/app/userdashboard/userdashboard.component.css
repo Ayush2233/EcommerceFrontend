@@ -1,0 +1,276 @@
+.maincontainer
+{
+    display: flex;
+    width: 92%;
+    margin-left: 4%;
+    justify-content: space-around;
+    margin-top: 3%;
+
+}
+
+.leftcontainer
+{
+    width: 25%;
+    /* background-color: aqua; */
+    display: flex;
+    height: fit-content;
+    flex-direction: column;
+    /* align-items: center; */
+    /* padding-top: 1; */
+}
+
+.usericon
+{
+    display: flex;
+    width: 90%;
+    margin-bottom: 6%;
+    margin-top: 4%;
+    /* background-color: aquamarine; */
+}
+
+.avatar
+{
+    width: 50px;
+    height: 50px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    font-size: large;
+}
+
+.userdetails
+{
+    /* background-color: aqua; */
+    width: 50%;
+    padding-left: 5%;
+    display: flex;
+    /* align-items: center; */
+    justify-content: center;
+    flex-direction: column;
+}
+
+.name
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold; 
+}
+
+.email
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:500;
+    font-size: small;
+}
+
+.menu
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:800;
+    color: #A9B0B4;
+    margin-left: 4%;
+    font-size: small;
+}
+
+.options
+{
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: blueviolet; */
+    width: 92%;
+    margin-left: 4%;
+    color: #696a6a;
+}
+
+.profile
+{
+    margin-bottom: 2%;
+    display:  flex;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight:800;
+    padding:4%;
+
+}
+
+.profile:hover
+{
+    cursor: pointer;
+    background-color: #c3c8cb;
+    color: #2F302C;
+}
+.profile span
+{
+    margin-left: 4%;
+}
+
+
+
+.rightcontainer
+{
+    width: 60%;
+    /* background-color: red; */
+    display: flex;
+    flex-direction: column;
+}
+
+.heading
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    font-size: x-large;
+    padding-top: 2%;
+}
+
+.content
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+
+.personalheading
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    font-size: larger;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.personalcard
+{
+    margin-top: 2%;
+    border: 1px solid #c3c8cb;
+    padding: 2.5%;
+    border-radius: 10px;
+}
+
+
+.namecard
+{
+    display: flex;
+    margin-top: 3%;
+    padding-left: 5%;
+}
+
+.leftpart
+{
+    display: flex;
+    flex-direction: column;
+    /* background-color: aqua; */
+    justify-content: space-between;
+    /* padding: 5%; */
+}
+
+.rightpart
+{
+    /* background-color: antiquewhite; */
+    margin-left: 20%;
+}
+
+.nme
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+}
+.eml
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    margin-top: 5%;
+}
+
+.statusicon
+{
+    width: 15%;
+    display: flex;
+    justify-content: space-around;
+    /* background-color: aqua; */
+}
+
+.statusicon span
+{
+    font-size: small;
+    color: #A9B0B4;
+}
+
+.ordercard:hover
+{
+    cursor: pointer;
+    background-color: #c3c8cb;
+    color:white;
+    background-color: black;
+}
+
+.passwordform
+{
+    /* background-color: red; */
+    /* width: 65%; */
+    margin-top: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.passform
+{
+    /* background-color: aqua; */
+    width: 60%;
+    
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    /* height: 50%; */
+}
+
+
+.signupform
+{
+    width: 80%;
+    padding-left: 7%;
+    padding-right: 3%;
+    padding-top: 2%;
+    /* padding-top: 10%;
+    padding-left: 8%; */
+}
+.signupheading
+{
+    font-family: 'Roboto', sans-serif;
+    font-weight: bold;
+    text-align: center;
+}
+
+.errortext
+{
+    color: red;
+    padding: 2%;
+}
+
+.inputfield
+{
+    border: 2px solid black;
+}
+
+.custwidth
+{
+    width: 50%;
+}
+
+
+.already
+{
+    display: flex;
+    align-items: center;
+}
+
+.already a
+{
+    color: black;
+}

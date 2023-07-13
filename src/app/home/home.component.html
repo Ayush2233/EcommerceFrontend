@@ -1,0 +1,50 @@
+<!-- <app-navbar></app-navbar> -->
+
+<div class="herocontainer">
+
+    <img src="\assets\images\banner1.jpg" alt="">
+
+</div>
+
+
+<h2 class="heading">Shop Our Top Categories</h2>
+<div  class="categorycontainer">
+    
+
+    <div class="cateCard" *ngFor="let category of categories;let i=index" [routerLink]="['/shop',category.name]">
+        <div class="categorycontent" >
+            <fa-icon   [icon]="icons[i]" [styles]="{color:'#2F302C'}" size="4x"></fa-icon>
+
+            <h2>{{category.name}}</h2> 
+        </div>  
+
+    </div>
+
+</div>
+
+<h2 class="heading">Featured Products</h2>
+
+<div  class="productcontainer">
+    
+    <div class="productcard" *ngFor="let product of productslimited">
+        
+        <div class="productimage">
+         <img src="{{product.image}}" alt="">
+        </div>
+
+        <div class="productname">
+            <p>{{product.name}}<p>
+            <p>Rs.{{product.price}}</p>
+        </div>
+
+        <div class="productdesc">
+            {{product.description}}
+        </div>
+
+        <div class="buybutton">
+            <a [routerLink]="['/product',product.id]">Buy Now</a>
+        </div>
+       
+    </div>
+</div>
+

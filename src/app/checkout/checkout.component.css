@@ -1,0 +1,300 @@
+.checkoutcontainer
+{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-around;
+    width: 92%;
+    /* height: fit-content; */
+    /* padding-bottom: 20%; */
+    /* background-color: ; */
+    margin-left: 4%;
+    /* background-color: antiquewhite; */
+}
+
+.leftcontainer
+{
+    width: 60%;
+    display: flex;
+    flex-direction: column;
+    /* background-color: red; */
+}
+
+.rightcontainer
+{
+    width: 35%;
+    /* background-color: aqua; */
+}
+
+.heading
+{
+    width: 92%;
+    /* margin-left: 3%; */
+    /* text-align: center; */
+    margin-top: 1%;
+}
+
+.heading p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: x-large;
+}
+.heading span
+{
+    font-family: 'Montserrat', sans-serif;
+    color: #A9B0B4;
+    font-weight: 600;
+    font-size: small;
+}
+
+.userinfocontainer
+{
+    display: flex;
+    margin-top: 2%;
+    padding-left: 5%;
+    flex-direction: column;
+}
+
+.userinfocontainer p
+{
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    /* font-weight: 900; */
+    /* background-color: aliceblue; */
+    font-size: small;
+}
+.para
+{
+    font-weight: 900;
+}
+
+.paymentcontainer
+{
+    margin-top: 3%;
+}
+
+/**
+  Default Markup
+**/
+
+body {
+    background: #F0E5E1 ;
+  }
+  
+  .container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  
+  /**
+    Component
+  **/
+  
+  label {
+      width: 100%;
+  }
+  
+  .card-input-element {
+      display: none;
+  }
+  
+  .card-input {
+      margin: 10px;
+      padding: 0px;
+      font-family: 'Montserrat', sans-serif;
+    
+    font-weight: 900;
+    /* background-color: aliceblue; */
+    font-size: smaller;
+  }
+
+ 
+  .card-header
+  {
+    display: flex; 
+    justify-content: space-around; 
+    align-items: center;
+  }
+  
+  .card-body
+  {
+    color: #727374;
+  }
+  .card-input:hover {
+      cursor: pointer;
+  }
+  
+  .card-input-element:checked + .card-input {
+       box-shadow: 0 0 1px 1px #2ecc71;
+  }
+
+
+
+
+
+
+  .ordersummary
+{
+    padding: 4%;
+    width: 80%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: #f3f4f5;
+    /* background-color: #ecedee; */
+}
+
+.summaryhead
+{
+    width: 100%;
+    
+    text-align: center;
+}
+
+.summaryhead p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+.urorder
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    margin-bottom: 5%;
+}
+
+.itemlist
+{
+    margin-top: 1%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.pname
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: smaller;
+}
+
+.pprice
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: smaller;
+}
+
+.discountsection
+{
+    display: flex;
+    flex-direction: column;
+}
+.discountheading
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.addcoupon
+{
+    width: 100%;
+    display: flex;
+    /* background-color: aquamarine; */
+    justify-content: space-around;
+    margin-bottom: 7%;
+}
+
+.addcoupon input
+{
+    width: 70%;
+    height: 2.2vw;
+    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    font-size: smaller;
+}
+.addcoupon input::placeholder
+{
+    font-family: 'Montserrat', sans-serif;
+    /* font-weight: bold; */
+    font-size: small;
+}
+
+
+.addcoupon button
+{
+    width: 20%;
+    height: 2.2vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+
+.subtotal
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* margin-bottom: 5%; */
+}
+.totalprice
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+.grndtotal
+{
+    font-size: medium;
+}
+
+
+.checkoutbutton 
+{
+    /* background-color: rebeccapurple; */
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+}
+.checkoutbutton a
+{
+   background-color: aqua;
+   width: 70%;
+   background-color: transparent;
+   border: 1px solid black;
+   padding-top: 3%;
+   padding-bottom: 3%;
+   padding-left: 6%;
+   padding-right: 6%;
+   text-align: center;
+   color: black;
+   font-size: small;
+   font-weight: 800;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.checkoutbutton a:hover
+{
+    cursor: pointer;
+    background-color: black;
+    color: white; 
+}
+
+  
+  

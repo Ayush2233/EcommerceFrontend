@@ -1,0 +1,120 @@
+.maincontainer
+{
+    width: 92%;
+    margin-left: 4%;
+    margin-top: 2%;
+    display: flex;
+    height: 500%;
+    /* background-color: #464442; */
+    /* height: 1000px; */
+    /* flex-direction: column; */
+}
+
+.leftcol
+{
+    width: 20%;
+    /* height: 100%; */
+    /* background-color: aqua; */
+}
+
+.rightcol
+{
+    width: 80%;
+    /* height: 100%; */
+    display: flex;
+    padding: 2%;
+    flex-direction: column;
+    /* background-color: aquamarine; */
+}
+
+.pageheading h1
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight:bold;
+    /* font-size: x-large; */
+}
+
+.productgrid
+{
+    
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    width: 100%;
+    align-items: center;
+    grid-column-gap: 3%;
+    grid-row-gap: 9%;
+    /* grid-auto-rows: 30%; */
+    grid-row: 30%;
+       
+}
+
+  .productcard
+{
+    /* background-color: #3a823a; */
+    /* width: 24%; */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    /* min-height: 80%; */
+    height: 100%;
+}
+
+.productimage
+{
+    width: 100%;
+    /* background-color:  #3a86ff; */
+    height: 75%;
+    /* min-height: 50%; */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.productimage img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.productname
+{
+    margin-top: 1%;
+    /* color: #464442; */
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    font-weight: 900;
+    font-size: medium;
+    padding-right: 2%;
+}
+
+.productdesc
+{
+   color: #464442;
+   font-size: smaller; 
+}
+
+.buybutton{margin-top: 4%;}
+
+.buybutton a
+{
+    background-color: #3a86ff;
+    border-radius: 7px;
+    text-decoration: none;
+    border: 2px solid #3a86ff;
+    color: white;
+    padding-left: 4%;
+    padding-right: 4%;
+    padding-top: 2.2%;
+    padding-bottom: 2.2%;
+    height: 2vw;
+    font-size: small;
+}
+
+.buybutton a:hover
+{
+    background-color: #3a86ff;
+    border: 2px solid #3a86ff;
+    color: white;
+    
+}

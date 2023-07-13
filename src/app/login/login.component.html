@@ -1,0 +1,80 @@
+<!-- <app-navbar></app-navbar> -->
+<div class="maincontainer">
+
+   <div class="signupform">
+
+    <h1 class="signupheading">Sign In</h1>
+
+    <form class="row g-3 loginform" #loginform="ngForm" (ngSubmit)="onLoginSubmit(username.value,password.value)">
+
+        <div class="d-grid gap-2">
+          <label for="inputEmail4" class="form-label">Email</label>
+          <input type="email" #username class="form-control" id="inputEmail4" id="username" name="username" ngModel>
+        </div>
+    
+        <div class="d-grid gap-2">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input type="password" #password class="form-control" id="inputPassword4" id="password" name="password" ngModel>
+        </div>
+        
+
+        <div class="d-grid gap-2 mybutton">
+          <button type="submit" class="btn btn-primary">Sign in</button>
+        </div>
+
+        <div class="d-grid gap-2 mybutton">
+            <h5>Don't have an account? <a href="/signup" ><b>Sign Up</b></a> here</h5>
+      
+          </div>
+
+
+      </form>
+   
+  
+  </div>
+
+  <div class="signupimage">
+
+    <img src="../../assets/images/signup.jpeg" alt="">
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="d-flex flex-row align-items-center mb-4" [class.has-error]="password.invalid && password.touched">
+      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+      <div class="form-outline flex-fill mb-0">
+        <input required minlength="6" maxlength="15" type="password" id="form3Example4c" class="form-control"
+          placeholder="Password" name="Password" #password="ngModel" [(ngModel)]="user.password" />
+        <span class="help-block" *ngIf="password.touched && password.errors?.['required']">Password is Required</span>
+        <div class="help-block" *ngIf="password.errors?.['minlength'] || password.errors?.['maxlength']">
+          Password must be at least 6 characters long and not more than 15 characters long.
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4" [class.has-error]="confirmpassword.invalid && confirmpassword.touched">
+      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+      <div class="form-outline flex-fill mb-0">
+        <input required ngValidateEqual="Password" #confirmpassword="ngModel" type="password" name="confirmpassword" id="form3Example4cd" class="form-control" placeholder="Re-enter Password" [(ngModel)]="user.confirmPassword"/>
+        <div *ngIf="(confirmpassword.dirty || confirmpassword.touched)">
+          <p class="help-block" *ngIf="confirmpassword.value!=password.value&& password.valid">
+            Passwords Don't Match
+          </p>
+        </div>
+      </div>
+    </div> -->

@@ -1,0 +1,162 @@
+<!-- <app-navbar></app-navbar> -->
+
+<div class="maincontainer">
+
+   <div class="signupform">
+
+    <h1 class="signupheading">Sign Up</h1>
+  
+    <form #signUpForm= "ngForm" class="row g-3" (ngSubmit)="onFormSubmit(selectedcountry.value , selectedstate.value , selectedcity.value)" ngNativeValidate>
+  
+    
+      <div class="col-md-6">
+          <label for="inputname"  class="form-label">Name</label>
+          <input required type="text" class="form-control inputfield" id="inputname" #name="ngModel" [(ngModel)]="user.name" name="name">
+          <div class="help-block errortext" *ngIf="name.value==''&& name.touched">
+            Name cannot be empty
+          </div>  
+         
+        </div>
+  
+      <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email</label>
+        <input required type="email" class="form-control inputfield" id="inputEmail4" #email="ngModel" [(ngModel)]="user.email" name="email" >
+        <div class="help-block errortext" *ngIf="email.value==''&& email.touched">
+          Email cannot be empty
+        </div>   
+      </div>
+  
+      <div class="col-md-6">
+          <label for="inputPhone"  class="form-label">Phone Number</label>
+          <input required tel   #phone="ngModel" type="tel" [pattern]="mobNumberPattern" class="form-control inputfield" id="inputPhone" [(ngModel)]="user.phone" name="phone">
+          <div class="help-block errortext" *ngIf="phone.value==''&& phone.touched">
+            Phone Number cannot be empty
+          </div>  
+      </div>
+  
+      <div class="col-md-4 custwidth">
+          <label  for="inputAge" class="form-label">Age</label>
+          <select #selectedage id="inputAge" class="form-select inputfield" [(ngModel)]="user.age" name="age">
+            <option value="1">Age</option>
+            <option *ngFor="let age of ages" [value]="age" >{{age}}</option>
+          </select>
+        </div>
+  
+      <div class="col-12">
+        <label for="inputAddress" class="form-label">Address</label>
+        <input required type="text" class="form-control inputfield" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="user.address.address" name="address">
+      </div>
+  
+      <div class="col-md-4">
+          <label  for="inputCountry" class="form-label">Country</label>
+          <select #selectedcountry id="inputCountry" class="form-select inputfield" (change)="onChangeCountry($any($event.target).value)">
+            <option value="1">Country</option>
+            <option *ngFor="let country of countries" [value]="country" >{{country}}</option>
+          </select>
+        </div>
+      
+      <div class="col-md-4">
+          <label for="inputState" class="form-label">State</label>
+          <select #selectedstate id="inputState" class="form-select inputfield" (change)="onChangeState($any($event.target).value)">
+            <option value="1">State</option>
+            <option *ngFor="let state of states" [value]="state" >{{state}}</option>
+          </select>
+      </div>
+  
+      <div class="col-md-4">
+          <label for="inputCity" class="form-label">City</label>
+          <select #selectedcity id="inputCity" class="form-select inputfield">
+            <option value="1" >City</option>
+            <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+          </select>
+      </div>
+  
+      <div class="col-md-6">
+          <label for="inputPassword4" class="form-label">Password</label>
+          <input #password="ngModel" required minlength="6" maxlength="15" type="password" class="form-control inputfield" id="inputPassword4" [(ngModel)]="user.password" name="password">
+          <div class="help-block errortext" *ngIf="password.errors?.['minlength'] || password.errors?.['maxlength']">
+              Password must be at least 6 characters long and not more than 15 characters long.
+            </div>
+      </div>
+  
+      <div class="col-md-6" [class.has-error]="confirmpassword.invalid && confirmpassword.touched">
+          <label for="inputPassword4" class="form-label">Confirm Password</label>
+          <input required ngValidateEqual="password" #confirmpassword="ngModel" type="password" name="confirmpassword" class="form-control inputfield" id="inputPassword4" [(ngModel)]="user.confirmPassword">
+         <div *ngIf="(confirmpassword.dirty || confirmpassword.touched)">
+            <p class="help-block errortext" *ngIf="confirmpassword.value!=password.value&& password.valid">
+              Passwords Don't Match
+            </p>
+          </div>
+      </div>
+      
+      <div class="col-12">
+        <div class="form-check">
+          <input class="form-check-input" type="checkbox" id="gridCheck" #rolecheck="ngModel" name="rolecheck" [(ngModel)]="user.rolecheck" [value]='"Seller"'>
+          <label class="form-check-label" for="gridCheck">
+            I am a Seller
+          </label>
+        </div>
+      </div>
+  
+      <div class="col-md-6">
+        <!-- <div class="d-grid gap-2"> -->
+          <button type="submit"  class="btn btn-primary mybtn" [disabled]="password.value!=confirmpassword.value">Sign in</button>
+        <!-- </div> -->
+      </div>
+
+      <div class="already">
+        
+          <h5>Already have an account ? <a href="/login" ><b>Sign in </b></a>here</h5>
+      
+      </div>
+
+    
+    </form>
+  
+  </div>
+
+  <div class="signupimage">
+
+    <img src="../../assets/images/signup.jpeg" alt="">
+  </div>
+
+
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="d-flex flex-row align-items-center mb-4" [class.has-error]="password.invalid && password.touched">
+      <i class="fas fa-lock fa-lg me-3 fa-fw"></i>
+      <div class="form-outline flex-fill mb-0">
+        <input required minlength="6" maxlength="15" type="password" id="form3Example4c" class="form-control"
+          placeholder="Password" name="Password" #password="ngModel" [(ngModel)]="user.password" />
+        <span class="help-block" *ngIf="password.touched && password.errors?.['required']">Password is Required</span>
+        <div class="help-block" *ngIf="password.errors?.['minlength'] || password.errors?.['maxlength']">
+          Password must be at least 6 characters long and not more than 15 characters long.
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex flex-row align-items-center mb-4" [class.has-error]="confirmpassword.invalid && confirmpassword.touched">
+      <i class="fas fa-key fa-lg me-3 fa-fw"></i>
+      <div class="form-outline flex-fill mb-0">
+        <input required ngValidateEqual="Password" #confirmpassword="ngModel" type="password" name="confirmpassword" id="form3Example4cd" class="form-control" placeholder="Re-enter Password" [(ngModel)]="user.confirmPassword"/>
+        <div *ngIf="(confirmpassword.dirty || confirmpassword.touched)">
+          <p class="help-block" *ngIf="confirmpassword.value!=password.value&& password.valid">
+            Passwords Don't Match
+          </p>
+        </div>
+      </div>
+    </div> -->

@@ -1,0 +1,60 @@
+
+<div class="navbar">
+
+    <div class="logoimage">
+        <img src="\assets\images\shopcart.png" alt="logo" class="logo" >
+    </div>
+
+    
+    
+    <div class="navlinks ">
+      <a href="/home" class="navs">Home</a>
+      <a href="/shop/All" >Shop</a>
+      <div class="nav-item dropdown">
+        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+          Categories
+        </a>
+        <ul class="dropdown-menu">
+          <li><a class="dropdown-item" href="">Action</a></li>
+          <li><a class="dropdown-item" href="">Another action</a></li>
+          <li><a class="dropdown-item" href="">Something else here</a></li>
+        </ul>
+      </div>
+      <a href="" >About Us</a>
+      
+    </div>
+
+    <form class="searchform" role="search">
+      <input class="mysearch" type="search" placeholder="Search" aria-label="Search">
+      <button class="btn btn-primary searchbtn" type="button">
+        <fa-icon  [icon]="faSearch" [styles]="{color:'white'}"></fa-icon>
+      </button>
+    </form>
+    
+    
+    <!-- <mat-icon [ngStyle]="{'color':'black'}">search</mat-icon> -->
+    
+      <div class="icons">
+
+        <div class="cart" *ngIf="isLoggedin()">
+          <fa-icon [routerLink]="['/cart']" [icon]="faCart" [styles]="{color:'#2F302C',cursor:'pointer'}" size="lg"></fa-icon>
+        </div>
+
+        <div class="account" *ngIf="isLoggedin()">
+          <fa-icon [routerLink]="['/user']" [icon]="faPerson" class="fa-regular" [styles]="{color:'#2F302C',cursor:'pointer'}" size="lg"></fa-icon>
+        </div>
+
+
+        <div class="logout" *ngIf="isLoggedin()">
+          <button class="btn btn-primary mybtn" (click)="logout()">Logout</button>
+        </div>
+
+        <div class="logout" *ngIf="!isLoggedin()">
+          <a href="/login"><button class="btn btn-primary mybtn">Sign In</button></a>
+        </div>
+        
+        
+      </div>
+
+</div>
+

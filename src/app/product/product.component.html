@@ -1,0 +1,73 @@
+<div class="mainrow">
+
+    <div class="leftcolumn">
+
+        <div class="mainimage">
+            <img src="{{requestedProduct.image}}" alt="">
+        </div>
+
+        <div class="imagerow">
+            <div class="imagesmall">
+                <img src="{{requestedProduct.image}}" alt="">
+            </div>
+            <div class="imagesmall">
+                <img src="{{requestedProduct.image}}" alt="">
+            </div>
+            <div class="imagesmall">
+                <img src="{{requestedProduct.image}}" alt="">
+            </div>
+            <div class="imagesmall">
+                <img src="{{requestedProduct.image}}" alt="">
+            </div>
+        </div>
+
+    </div>
+
+    <div class="rightcolumn">
+
+        <div class="producttitle">
+            <p>{{requestedProduct.name}}</p>
+        </div>
+
+        <div class="productdesc">
+            <p>{{requestedProduct.description}}</p>
+        </div>
+
+        <div class="productprice">
+            <p>Rs. {{requestedProduct.price}}</p>
+            <span>Inclusive of Taxes</span>
+        </div>
+
+        <div class="addtobag">
+            <a (click)="addtocart(requestedProduct.id)">Add to Bag </a>
+            <a href=>Buy Now</a>
+        </div>
+
+
+    </div>
+
+</div>
+
+<!-- <div  class="productcontainer">
+    
+    <div class="productcard" *ngFor="let product of products">
+
+        <div class="productimage">
+         <img src="{{product.image}}" alt="">
+        </div>
+
+        <div class="productname">
+            <p>{{product.name}}<p>
+            <p>Rs.{{product.price}}</p>
+        </div>
+
+        <div class="productdesc">
+            {{product.description}}
+        </div>
+
+        <div class="buybutton">
+            <a href="">Buy Now</a>
+        </div>
+       
+    </div>
+</div> -->

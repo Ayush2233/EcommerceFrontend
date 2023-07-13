@@ -1,0 +1,149 @@
+
+<div class="checkoutcontainer" *ngIf="!isCartempty()">
+
+    <div class="leftcontainer">
+
+        <div class="heading">
+            <p>Billing Information</p>
+            
+        </div>
+
+        <div class="userinfocontainer">
+
+            <p class="para">{{userdetails.name}}</p> 
+            <p> {{userdetails.address.address}}<br>{{userdetails.address.stateCity.cityName}} , {{userdetails.address.stateCity.stateName}}  <br>{{userdetails.phone}}
+            </p>
+            <!-- </p>
+            <p></p> -->
+        </div>
+
+        <div class="heading" style="margin-top: 5%;">
+            <p>Payment</p>
+            <span>Select the payment method </span>
+            
+        </div>
+
+        <div class="paymentcontainer">
+
+            <div class="row">
+      
+                <div class="col-md-4 col-lg-4 col-sm-4">    
+                  <label>
+                    <input type="radio" name="product" selected checked class="card-input-element" />
+                      <div class="card card-default card-input">
+
+                        <div class="card-header" >
+                            Cash On Delivery     
+                            <fa-icon  [icon]="cash" [styles]="{color:'green'}" size="2x"></fa-icon>
+                        </div>
+                        <div class="card-body">
+                          Pay to Delivery agent on delivery
+                        </div>
+                      </div>
+          
+                  </label>
+                  
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-sm-4">
+                  <label>
+                    <input type="radio" name="product" class="card-input-element" />
+          
+                      <div class="card card-default card-input">
+                        <div class="card-header">Credit & Debit Card
+                            <fa-icon  [icon]="visa"  size="2x"></fa-icon>
+                        </div>
+                        <div class="card-body">
+                          Pay using credit and debit cards
+                        </div>
+                      </div>
+                  </label>
+                  
+                </div>
+
+                <div class="col-md-4 col-lg-4 col-sm-4">
+                  
+                  <label>
+                    <input type="radio" name="product" class="card-input-element" />
+          
+                      <div class="card card-default card-input">
+                        <div class="card-header">UPI and Wallets
+                            <fa-icon  [icon]="gpay" size="2x" ></fa-icon>
+                            <fa-icon  [icon]="apay" size="2x" ></fa-icon>
+                        </div>
+                        <div class="card-body">
+                            Pay directly using UPI and wallets 
+                        </div>
+                      </div>
+                  </label>
+                  
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="rightcontainer">
+
+        <div class="ordersummary">
+            
+            <div class="summaryhead">
+                <p>Order Summary</p>
+            </div>
+    
+            <div class="urorder">
+                Your Order
+            </div>
+
+            <div class="itemlist" *ngFor="let p of cartitems">
+                <div class="pname">
+                    {{p.productEntity.name}} x {{p.quantity}}
+                </div>
+
+                <div class="pprice">
+                    Rs. {{p.productEntity.price*p.quantity}}
+                </div>
+            </div>
+            
+            <hr>
+
+            <div class="discountsection">
+
+                <div class="discountheading">
+                    Discount
+                </div>
+        
+
+                <div class="subtotal">
+                    <p>Subtotal</p>
+                    <p class="totalprice">Rs.{{carttotal}}</p>
+                </div>
+                <div class="subtotal">
+                    <p>Discount</p>
+                    <p class="totalprice">- Rs. {{discount}} </p>
+                </div>
+                <div class="subtotal">
+                    <p>Delivery Charges</p>
+                    <p class="totalprice">+ Rs. {{delivery}}</p>
+                </div>
+
+                <hr>
+
+                <div class="subtotal">
+                    <p class="grndtotal">Grand Total</p>
+                    <p class="grndtotal">Rs. {{grandtotal}}</p>
+                </div>                
+            </div>
+
+            <div class="checkoutbutton" *ngIf="!isCartempty()">
+                <a (click)="placeorder()">Place Order</a>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+
+

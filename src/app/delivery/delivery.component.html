@@ -1,0 +1,99 @@
+<div class="deliverycontainer">
+
+    <div class="heading">
+        <p>Order Details</p>
+    </div>
+
+    <div class="maincontainer">
+        <div class="leftcontainer">
+            
+            <div class="shipheading">
+                <p>Shipping Info</p>
+            </div>
+
+            <div class="timeline" *ngIf="!isCancelled()" >
+                <div class="dots">
+                    <img src="\assets\images\dots.png" alt="" *ngIf="orderdetails.orderStatus=='pending'">
+                    <img src="\assets\images\dots1.png" alt="" *ngIf="orderdetails.orderStatus=='delivered'">
+                </div>
+                <div class="status">
+                    <div class="intransit" style="margin-bottom: 10%;">
+                        <p class="transitheading">
+                            In Transit 
+                        </p>
+                        <p class="transitbody">
+                            DeliveryId : {{orderdetails.delivery.id}}
+                        </p>
+                        
+                    </div>
+
+                    <div class="intransit">
+                        <p class="transitheading" *ngIf="orderdetails.orderStatus=='delivered'">
+                            Delivered 
+                        </p>
+                        <p class="transitheading" *ngIf="orderdetails.orderStatus=='pending'">
+                            Arriving Soon
+                        </p>
+                        <p class="transitbody" *ngIf="orderdetails.orderStatus=='pending'" >
+                            Expected Delivery Date {{orderdetails.delivery.expectedDeliveryDate}}
+                        </p>
+                        <p class="transitbody" *ngIf="orderdetails.orderStatus=='delivered'" >
+                            Delivery Date {{orderdetails.delivery.deliveryDate}}
+                        </p>
+
+                       
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="cancelbutton" (click)="cancelorder(orderdetails.id)" *ngIf="!isCancelled()" >
+                Cancel
+            </div>
+
+
+            <div class="cancel" *ngIf="isCancelled()" >
+                <fa-icon [icon]="cancelicon" [styles]="{color:'red',cursor:'pointer'}" size="5x"></fa-icon>
+                <span>
+                    ORDER CANCELLED
+                </span>
+            </div>
+
+
+
+        </div>
+
+        <div class="rightcontainer">
+
+            <div class="cartproduct" *ngFor="let p of orderdetails.product" >
+
+                <div class="prodimage">
+                    <img [routerLink]="['/product',p.id]" src="{{p.image}}" alt="">
+                </div>
+    
+                <div class="details">
+                    <p>{{p.name}}</p>
+                    <!-- <p>Rs. {{p.price}}</p> -->
+                    <span>{{p.description}}</span>
+                </div>
+        
+                <div class="productprice">
+                    <p>Rs. {{p.price}}</p>
+                </div>
+    
+            
+            </div>
+
+            <hr color="black">
+
+            <div class="amount">
+                Order Amount  
+                <span>
+                    Rs. {{orderdetails.paymentAmount}}
+                </span>
+            </div>
+           
+        </div>
+
+    </div>
+</div>

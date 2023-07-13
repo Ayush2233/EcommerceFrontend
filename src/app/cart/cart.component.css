@@ -1,0 +1,352 @@
+.cartcontainer
+{
+    margin-top: 3%;
+    display: flex;
+    justify-content: space-between;
+    width: 92%;
+    /* height: fit-content; */
+    /* padding-bottom: 20%; */
+    /* background-color: ; */
+    margin-left: 4%;
+    /* background-color: antiquewhite; */
+}
+
+.heading
+{
+    width: 92%;
+    /* margin-left: 3%; */
+    /* text-align: center; */
+    margin-top: 1%;
+}
+
+.heading p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: xx-large;
+}
+
+.cartheader
+{
+    margin-top: 3%;
+    margin-bottom: 3%;
+    padding-left: 2%;
+    padding-right: 2%;
+    width: 100%;
+    /* background-color: rebeccapurple; */
+    display: flex;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    justify-content: space-between;
+    align-items: center;
+    color: #A9B0B4;
+    border-bottom: 1px solid #A9B0B4;
+}
+
+.carttop
+{
+    display: flex;
+    flex-direction: column;
+}
+
+.leftcont
+{
+    width: 60%;
+    display: flex;
+    padding-left: 10%;
+    flex-direction: column;
+}
+
+.cartproduct
+{
+    display: flex;
+    height: 15%;
+    margin-bottom: 3%;
+    /* background-color: aqua; */
+    /* justify-content: space-between; */
+    /* flex-direction: column; */
+}
+
+.prodimage
+{
+    height: 100%;
+    /* background-color: blueviolet; */
+    width: 15%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+.prodimage img
+{
+    max-width: 100%;
+    max-height: 100%;
+}
+
+.prodimage img:hover
+{
+    cursor: pointer;
+}
+.details
+{
+    /* background-color: rebeccapurple; */
+    width: 30%;
+    padding-left: 2%;
+    /* display: flex; */
+    /* flex-direction: column; */
+    /* justify-content: flex-start; */
+    /* text-align: center; */
+}
+
+.details p
+{
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    font-weight: 900;
+    /* background-color: aliceblue; */
+    font-size: smaller;
+    
+}
+.details span
+{
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    /* background-color: aliceblue; */
+    font-size: smaller;
+}
+.quantity
+{
+    /* background-color: aqua; */
+    width: 20%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+
+.removefromcart
+{
+    /* background-color: antiquewhite; */
+    width: 16%;
+    display: flex;
+    align-items:center;
+    justify-content: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+
+.removefromcart a
+{
+    background-color: transparent;
+    border: 1px solid black;
+    padding: 2%;
+    color: black;
+    font-size: x-small;
+    font-weight: 800;
+    font-family: 'Montserrat', sans-serif;
+
+}
+.removefromcart a:hover
+{
+    cursor: pointer;
+    background-color: black;
+    color: white; 
+}
+
+.productprice
+{
+    /* background-color: red; */
+    width: 20%;
+    display: flex;
+    padding-right: 2%;
+    justify-content: end;
+    align-items: center;
+}
+
+.productprice p
+{
+    font-family: 'Montserrat', sans-serif;
+    align-items: center;
+    font-weight: 900;
+    /* background-color: aliceblue; */
+    font-size: smaller;
+}
+
+
+.rightcont
+{
+    width: 35%;
+    display: flex;
+    justify-content: center;
+    height: fit-content;
+    /* flex-direction: column; */
+    /* border-left: 1px solid black; */
+    /* background-color: aquamarine; */
+}
+
+.ordersummary
+{
+    padding: 4%;
+    width: 80%;
+    display: flex;
+    border-radius: 5px;
+    flex-direction: column;
+    background-color: #f3f4f5;
+    /* background-color: #ecedee; */
+}
+
+.summaryhead
+{
+    width: 100%;
+    
+    text-align: center;
+}
+
+.summaryhead p
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: large;
+}
+
+
+.urorder
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    margin-bottom: 5%;
+}
+
+.itemlist
+{
+    margin-top: 1%;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+}
+.pname
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: smaller;
+}
+
+.pprice
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 800;
+    font-size: smaller;
+}
+
+.discountsection
+{
+    display: flex;
+    flex-direction: column;
+}
+.discountheading
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+    width: 100%;
+    margin-bottom: 2%;
+}
+
+.addcoupon
+{
+    width: 100%;
+    display: flex;
+    /* background-color: aquamarine; */
+    justify-content: space-around;
+    margin-bottom: 7%;
+}
+
+.addcoupon input
+{
+    width: 70%;
+    height: 2.2vw;
+    background-color: #f9f9f9;
+    font-family: 'Montserrat', sans-serif;
+    font-size: smaller;
+}
+.addcoupon input::placeholder
+{
+    font-family: 'Montserrat', sans-serif;
+    /* font-weight: bold; */
+    font-size: small;
+}
+
+
+.addcoupon button
+{
+    width: 20%;
+    height: 2.2vw;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+
+.subtotal
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: smaller;
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    /* margin-bottom: 5%; */
+}
+.totalprice
+{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    font-size: small;
+}
+.grndtotal
+{
+    font-size: medium;
+}
+
+
+.checkoutbutton 
+{
+    /* background-color: rebeccapurple; */
+    margin-top: 5%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* width: 100%; */
+}
+.checkoutbutton a
+{
+   background-color: aqua;
+   width: 70%;
+   background-color: transparent;
+   border: 1px solid black;
+   padding-top: 3%;
+   text-decoration: none;
+   padding-bottom: 3%;
+   padding-left: 6%;
+   padding-right: 6%;
+   text-align: center;
+   color: black;
+   font-size: small;
+   font-weight: 800;
+   font-family: 'Montserrat', sans-serif;
+}
+
+.checkoutbutton a:hover
+{
+    cursor: pointer;
+    background-color: black;
+    color: white; 
+}

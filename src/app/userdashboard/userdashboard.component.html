@@ -1,0 +1,596 @@
+
+<div class="maincontainer">
+
+    <div class="leftcontainer">
+
+        <div class="usericon">
+
+            <div class="avatar">
+                {{user.name[0]}}
+            </div>
+
+            <div class="userdetails">
+                <div class="name">
+                    {{user.name}}
+                </div>
+                <div class="email">
+                    {{user.email}}
+                </div>
+                <div class="email">
+                    {{role[0].role}}
+                </div>
+            </div>
+        </div>
+
+        <div class="menu">
+            MENU
+        </div>
+
+        <div class="options">
+
+            <div class="profile" (click)="profile()">
+                <fa-icon [icon]="usericon" [styles]="{color:'',cursor:'pointer'}" size="lg"></fa-icon>
+               
+                <span>Profile</span>
+            
+            </div>
+
+            <div class="profile" (click)="orders()">
+                <fa-icon [icon]="ordericon" [styles]="{color:'',cursor:'pointer',}" size="lg"></fa-icon>
+               
+                <span>Orders</span>
+            
+            </div>
+
+            <div class="profile" (click)="changepassword()">
+                <fa-icon [icon]="passwordicon" [styles]="{color:'',cursor:'pointer'}" size="lg"></fa-icon>
+               
+                <span>Change Password</span>
+            
+            </div>
+
+            <div *ngIf="isAdmin()" >
+
+                <div class="profile" (click)="addseller()">
+                    <fa-icon [icon]="helpicon" [styles]="{color:'',cursor:'pointer'}" size="lg"></fa-icon>
+                    
+                    <span>Add Seller</span>
+                </div>
+                
+            </div>
+
+            <div *ngIf="isAdmin()" >
+
+                <div class="profile" (click)="addadmin()">
+                    <fa-icon [icon]="helpicon" [styles]="{color:'',cursor:'pointer'}" size="lg"></fa-icon>
+                    
+                    <span>Add Admin</span>
+                </div>
+                
+            </div>
+            
+            <div *ngIf="isSeller()" >
+
+                <div class="profile" (click)="addproduct()">
+                    <fa-icon [icon]="addproducticon" [styles]="{color:'',cursor:'pointer'}" size="lg"></fa-icon>
+                    
+                    <span>Add Product</span>
+                </div>
+                
+            </div>
+            <div *ngIf="isSeller()" >
+
+                <div class="profile" (click)="deleteproduct()">
+                    <fa-icon [icon]="deleteproducticon" [styles]="{color:'',cursor:'pointer'}" size="lg"></fa-icon>
+                    
+                    <span>Delete Product</span>
+                </div>
+                
+            </div>
+
+            <div class="profile" (click)="logout()">
+                <fa-icon [icon]="logouticon" [styles]="{color:'',cursor:'pointer'}" size="lg"></fa-icon>
+               
+                <span>Logout</span>
+            
+            </div>
+        </div>
+
+
+    </div>
+
+    <div class="rightcontainer">
+
+        <div class="heading">
+            {{heading}}
+        </div>
+
+
+        <div class="content" *ngIf="selectedoption==1">
+
+            <div class="personalcard">
+                
+                <div class="personalheading">
+                    Personal Information
+
+                    <fa-icon [icon]="editicon" [styles]="{color:'',cursor:'pointer'}" size="sm"></fa-icon>
+                </div>
+
+
+                <div class="namecard">
+
+                    <div class="leftpart">
+
+                        <div class="nme">
+                            <div style="color: #c3c8cb;">
+                                Name
+                            </div>
+                            {{user.name}}
+                         </div>
+                         <br>
+
+                         <div class="eml">
+                            <div style="color: #c3c8cb; font-weight: bold; " >
+                                Email
+                            </div>
+                            {{user.email}}
+                         </div>
+                    </div>
+
+                    <div class="rightpart">
+
+                        <div class="nme">
+                            <div style="color: #c3c8cb;">
+                                Age
+                            </div>
+                            {{user.age}}
+                         </div>
+                         <br>
+
+                         <div class="eml">
+                            <div style="color: #c3c8cb; font-weight: bold; " >
+                                Phone No.
+                            </div>
+                            {{user.phone}}
+                         </div>
+                    </div>
+
+                    
+                   
+                </div>
+            </div>
+            
+            <div class="personalcard">
+                
+                <div class="personalheading">
+                    Address
+                    <fa-icon [icon]="editicon" [styles]="{color:'',cursor:'pointer'}" size="sm"></fa-icon>
+                </div>
+
+
+                <div class="namecard">
+
+                    <div class="leftpart">
+
+                        <div class="nme">
+                            <div style="color: #c3c8cb;">
+                                Street
+                            </div>
+                            {{user.address.address}}
+                         </div>
+                         <br>
+
+                         <div class="eml">
+                            <div style="color: #c3c8cb; font-weight: bold; " >
+                                City
+                            </div>
+                            {{user.address.stateCity.cityName}}
+                         </div>
+                    </div>
+
+                    <div class="rightpart">
+
+                        <div class="nme">
+                            <div style="color: #c3c8cb;">
+                                State
+                            </div>
+                            {{user.address.stateCity.stateName}}
+                         </div>
+                         <br>
+
+                         <div class="eml">
+                            <div style="color: #c3c8cb; font-weight: bold; " >
+                                Country
+                            </div>
+                            {{user.address.stateCity.country.name}}
+                         </div>
+                    </div>
+                   
+                </div>
+            </div>
+            
+        
+
+        </div>
+
+        <div class="content" *ngIf="selectedoption==2" >
+
+            <div class="personalcard ordercard" *ngFor="let order of userorderentity" [routerLink]="['/delivery',order.id]">
+                
+                <div class="personalheading">
+                    Order Information
+                    <div class="statusicon" *ngIf="order.orderStatus=='pending'">
+                        <fa-icon [icon]="transiticon"  [styles]="{color:'',cursor:'pointer'}" size="sm"></fa-icon>
+
+                        <span>In Transit</span>
+                    </div>
+                    <div class="statusicon" *ngIf="order.orderStatus=='delivered'">
+                        <fa-icon [icon]="successicon"  [styles]="{color:'#70e000',cursor:'pointer'}" size="sm"></fa-icon>
+
+                        <span>Delivered</span>
+                    </div>
+                    <div class="statusicon" *ngIf="order.orderStatus=='cancelled'">
+                        <fa-icon [icon]="cancelicon"  [styles]="{color:'red',cursor:'pointer'}" size="sm"></fa-icon>
+
+                        <span>Cancelled</span>
+                    </div>
+                </div>
+
+
+                <div class="namecard">
+
+                    <div class="leftpart">
+
+                        <div class="nme">
+                            <div style="color: #c3c8cb;">
+                                Order Id
+                            </div>
+                            {{order.id}}
+                         </div>
+                         <br>
+
+                         <div class="eml">
+                            <div style="color: #c3c8cb; font-weight: bold; " >
+                                Ordered On
+                            </div>
+                            {{order.orderDate}}
+                         </div>
+                    </div>
+
+                    <div class="rightpart">
+
+                        <div class="nme">
+                            <div style="color: #c3c8cb;">
+                                Amount
+                            </div>
+                            Rs. {{order.paymentAmount}}
+                         </div>
+                         <br>
+
+                         <div class="eml" *ngIf="order.orderStatus=='pending'">
+                            <div style="color: #c3c8cb; font-weight: bold; " >
+                                Expected Date of Arrival
+                            </div>
+                            {{order.delivery.expectedDeliveryDate}}
+                         </div>
+                         <div class="eml" *ngIf="order.orderStatus=='delivered'">
+                            <div style="color: #c3c8cb; font-weight: bold; " >
+                                Delivered On
+                            </div>
+                            {{order.delivery.deliveryDate}}
+                         </div>
+                         <div class="eml" *ngIf="order.orderStatus=='cancelled'">
+                            <div style="color: #c3c8cb; font-weight: bold; " >
+                                Delivery Date
+                            </div>
+                            ORDER CANCELLED
+                         </div>
+
+                    </div>
+
+                    
+                   
+                </div>
+            </div>
+
+        </div>
+
+        <div class="content" *ngIf="selectedoption==3" >
+
+            <div class="passwordform">
+                <form class="row g-3 passform" #passwordform="ngForm" (ngSubmit)="changepasswordfunction(oldpassword.value,passwordnew.value,passwordnewconfirm.value)">
+
+                    <div class="d-grid gap-2 passinput">
+                      <label for="inputEmail4" class="form-label">Old Password</label>
+                      <input type="password" #oldpassword class="form-control" id="inputEmail4" >
+                    </div>
+                
+                    <div class="d-grid gap-2 passinput">
+                      <label for="inputPassword4" class="form-label">New Password</label>
+                      <input type="password" #passwordnew class="form-control" id="inputPassword4"  >
+                    </div>
+                    <div class="d-grid gap-2 passinput">
+                      <label for="inputPassword5" class="form-label">Confirm Password</label>
+                      <input type="password" #passwordnewconfirm class="form-control" id="inputPassword5"  >
+                    </div>
+                    
+            
+                    <div class="d-grid gap-2 mybutton">
+                      <button type="submit" class="btn btn-primary">Change Password</button>
+                    </div>
+            
+                  </form>
+               
+            </div>
+
+        </div>
+
+        <div class="content" *ngIf="selectedoption==4" >
+
+            <div class="signupform">
+              
+                <form #signUpForm= "ngForm" class="row g-3" (ngSubmit)="onFormSubmit(selectedcountry.value , selectedstate.value , selectedcity.value)" ngNativeValidate>
+              
+                
+                  <div class="col-md-6">
+                      <label for="inputname"  class="form-label">Name</label>
+                      <input required type="text" class="form-control inputfield" id="inputname" #name="ngModel" [(ngModel)]="user.name" name="name">
+                      <div class="help-block errortext" *ngIf="name.value==''&& name.touched">
+                        Name cannot be empty
+                      </div>  
+                     
+                    </div>
+              
+                  <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input required type="email" class="form-control inputfield" id="inputEmail4" #email="ngModel" [(ngModel)]="user.email" name="email" >
+                    <div class="help-block errortext" *ngIf="email.value==''&& email.touched">
+                      Email cannot be empty
+                    </div>   
+                  </div>
+              
+                  <div class="col-md-6">
+                      <label for="inputPhone"  class="form-label">Phone Number</label>
+                      <input required tel   #phone="ngModel" type="tel" [pattern]="mobNumberPattern" class="form-control inputfield" id="inputPhone" [(ngModel)]="user.phone" name="phone">
+                      <div class="help-block errortext" *ngIf="phone.value==''&& phone.touched">
+                        Phone Number cannot be empty
+                      </div>  
+                  </div>
+              
+                  <div class="col-md-4 custwidth">
+                      <label  for="inputAge" class="form-label">Age</label>
+                      <select #selectedage id="inputAge" class="form-select inputfield" [(ngModel)]="user.age" name="age">
+                        <option value="1">Age</option>
+                        <option *ngFor="let age of ages" [value]="age" >{{age}}</option>
+                      </select>
+                    </div>
+              
+                  <div class="col-12">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input required type="text" class="form-control inputfield" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="user.address.address" name="address">
+                  </div>
+              
+                  <div class="col-md-4">
+                      <label  for="inputCountry" class="form-label">Country</label>
+                      <select #selectedcountry id="inputCountry" class="form-select inputfield" (change)="onChangeCountry($any($event.target).value)">
+                        <option value="1">Country</option>
+                        <option *ngFor="let country of countries" [value]="country" >{{country}}</option>
+                      </select>
+                    </div>
+                  
+                  <div class="col-md-4">
+                      <label for="inputState" class="form-label">State</label>
+                      <select #selectedstate id="inputState" class="form-select inputfield" (change)="onChangeState($any($event.target).value)">
+                        <option value="1">State</option>
+                        <option *ngFor="let state of states" [value]="state" >{{state}}</option>
+                      </select>
+                  </div>
+              
+                  <div class="col-md-4">
+                      <label for="inputCity" class="form-label">City</label>
+                      <select #selectedcity id="inputCity" class="form-select inputfield">
+                        <option value="1" >City</option>
+                        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+                      </select>
+                  </div>
+              
+                  <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">Password</label>
+                      <input #password="ngModel" required minlength="6" maxlength="15" type="password" class="form-control inputfield" id="inputPassword4" [(ngModel)]="user.password" name="password">
+                      <div class="help-block errortext" *ngIf="password.errors?.['minlength'] || password.errors?.['maxlength']">
+                          Password must be at least 6 characters long and not more than 15 characters long.
+                        </div>
+                  </div>
+              
+                  <div class="col-md-6" [class.has-error]="confirmpassword.invalid && confirmpassword.touched">
+                      <label for="inputPassword4" class="form-label">Confirm Password</label>
+                      <input required ngValidateEqual="password" #confirmpassword="ngModel" type="password" name="confirmpassword" class="form-control inputfield" id="inputPassword4" [(ngModel)]="user.confirmPassword">
+                     <div *ngIf="(confirmpassword.dirty || confirmpassword.touched)">
+                        <p class="help-block errortext" *ngIf="confirmpassword.value!=password.value&& password.valid">
+                          Passwords Don't Match
+                        </p>
+                      </div>
+                  </div>
+             
+                  <div class="col-md-6">
+                    <!-- <div class="d-grid gap-2"> -->
+                      <button type="submit"  class="btn btn-primary mybtn" [disabled]="password.value!=confirmpassword.value">Sign in</button>
+                    <!-- </div> -->
+                  </div>            
+                
+                </form>
+              
+              </div>
+
+        </div>
+        <div class="content" *ngIf="selectedoption==5" >
+
+            <div class="signupform">
+              
+                <form #signUpForm= "ngForm" class="row g-3" (ngSubmit)="onFormSubmit(selectedcountry.value , selectedstate.value , selectedcity.value)" ngNativeValidate>
+              
+                
+                  <div class="col-md-6">
+                      <label for="inputname"  class="form-label">Name</label>
+                      <input required type="text" class="form-control inputfield" id="inputname" #name="ngModel" [(ngModel)]="user.name" name="name">
+                      <div class="help-block errortext" *ngIf="name.value==''&& name.touched">
+                        Name cannot be empty
+                      </div>  
+                     
+                    </div>
+              
+                  <div class="col-md-6">
+                    <label for="inputEmail4" class="form-label">Email</label>
+                    <input required type="email" class="form-control inputfield" id="inputEmail4" #email="ngModel" [(ngModel)]="user.email" name="email" >
+                    <div class="help-block errortext" *ngIf="email.value==''&& email.touched">
+                      Email cannot be empty
+                    </div>   
+                  </div>
+              
+                  <div class="col-md-6">
+                      <label for="inputPhone"  class="form-label">Phone Number</label>
+                      <input required tel   #phone="ngModel" type="tel" [pattern]="mobNumberPattern" class="form-control inputfield" id="inputPhone" [(ngModel)]="user.phone" name="phone">
+                      <div class="help-block errortext" *ngIf="phone.value==''&& phone.touched">
+                        Phone Number cannot be empty
+                      </div>  
+                  </div>
+              
+                  <div class="col-md-4 custwidth">
+                      <label  for="inputAge" class="form-label">Age</label>
+                      <select #selectedage id="inputAge" class="form-select inputfield" [(ngModel)]="user.age" name="age">
+                        <option value="1">Age</option>
+                        <option *ngFor="let age of ages" [value]="age" >{{age}}</option>
+                      </select>
+                    </div>
+              
+                  <div class="col-12">
+                    <label for="inputAddress" class="form-label">Address</label>
+                    <input required type="text" class="form-control inputfield" id="inputAddress" placeholder="1234 Main St" [(ngModel)]="user.address.address" name="address">
+                  </div>
+              
+                  <div class="col-md-4">
+                      <label  for="inputCountry" class="form-label">Country</label>
+                      <select #selectedcountry id="inputCountry" class="form-select inputfield" (change)="onChangeCountry($any($event.target).value)">
+                        <option value="1">Country</option>
+                        <option *ngFor="let country of countries" [value]="country" >{{country}}</option>
+                      </select>
+                    </div>
+                  
+                  <div class="col-md-4">
+                      <label for="inputState" class="form-label">State</label>
+                      <select #selectedstate id="inputState" class="form-select inputfield" (change)="onChangeState($any($event.target).value)">
+                        <option value="1">State</option>
+                        <option *ngFor="let state of states" [value]="state" >{{state}}</option>
+                      </select>
+                  </div>
+              
+                  <div class="col-md-4">
+                      <label for="inputCity" class="form-label">City</label>
+                      <select #selectedcity id="inputCity" class="form-select inputfield">
+                        <option value="1" >City</option>
+                        <option *ngFor="let city of cities" [value]="city">{{city}}</option>
+                      </select>
+                  </div>
+              
+                  <div class="col-md-6">
+                      <label for="inputPassword4" class="form-label">Password</label>
+                      <input #password="ngModel" required minlength="6" maxlength="15" type="password" class="form-control inputfield" id="inputPassword4" [(ngModel)]="user.password" name="password">
+                      <div class="help-block errortext" *ngIf="password.errors?.['minlength'] || password.errors?.['maxlength']">
+                          Password must be at least 6 characters long and not more than 15 characters long.
+                        </div>
+                  </div>
+              
+                  <div class="col-md-6" [class.has-error]="confirmpassword.invalid && confirmpassword.touched">
+                      <label for="inputPassword4" class="form-label">Confirm Password</label>
+                      <input required ngValidateEqual="password" #confirmpassword="ngModel" type="password" name="confirmpassword" class="form-control inputfield" id="inputPassword4" [(ngModel)]="user.confirmPassword">
+                     <div *ngIf="(confirmpassword.dirty || confirmpassword.touched)">
+                        <p class="help-block errortext" *ngIf="confirmpassword.value!=password.value&& password.valid">
+                          Passwords Don't Match
+                        </p>
+                      </div>
+                  </div>
+             
+                  <div class="col-md-6">
+                    <!-- <div class="d-grid gap-2"> -->
+                      <button type="submit"  class="btn btn-primary mybtn" [disabled]="password.value!=confirmpassword.value">Sign in</button>
+                    <!-- </div> -->
+                  </div>            
+                
+                </form>
+              
+              </div>
+
+        </div>
+        <div class="content" *ngIf="selectedoption==6" >
+
+            <div class="signupform">
+              
+                <form #addproductform= "ngForm" class="row g-3" (ngSubmit)="addproductfunction(selectedcategory.value)" ngNativeValidate>
+              
+                  <div class="col-md-6">
+                      <label for="inputname"  class="form-label">Product Name</label>
+                      <input required type="text" class="form-control inputfield" id="inputname" #pname="ngModel" [(ngModel)]="product.name" name="name">
+                      <div class="help-block errortext" *ngIf="pname.value==''&& pname.touched">
+                        Name cannot be empty
+                      </div>  
+                     
+                    </div>
+                  <div class="col-md-6">
+                      <label for="inputdesc"  class="form-label">Product Description</label>
+                      <input required type="text" class="form-control inputfield" id="inputdesc" #desc="ngModel" [(ngModel)]="product.description" name="name">
+                      <div class="help-block errortext" *ngIf="desc.value==''&& desc.touched">
+                        Description cannot be empty
+                      </div>  
+                     
+                    </div>
+
+                  <div class="col-md-6">
+                      <label for="inputprice"  class="form-label">Product Price</label>
+                      <input required type="text" class="form-control inputfield" id="inputprice" #price="ngModel" [(ngModel)]="product.price" name="name">
+                      <div class="help-block errortext" *ngIf="price.value==''&& price.touched">
+                        Price cannot be empty
+                      </div>  
+                     
+                    </div>
+
+                  <div class="col-md-6">
+                      <label for="inputcount"  class="form-label">Count</label>
+                      <input required type="text" class="form-control inputfield" id="inputcount" #count="ngModel" [(ngModel)]="product.count" name="name">
+                      <div class="help-block errortext" *ngIf="count.value==''&& count.touched">
+                        Count cannot be empty
+                      </div>  
+                     
+                    </div>
+
+                  <div class="col-md-6">
+                      <label for="inputimage"  class="form-label">Image URL</label>
+                      <input required type="text" class="form-control inputfield" id="inputimage" #image="ngModel" [(ngModel)]="product.image" name="name">
+                      <div class="help-block errortext" *ngIf="image.value==''&& image.touched">
+                        Image cannot be empty
+                      </div>  
+                     
+                    </div>
+                    <div class="col-md-4">
+                        <label for="inputcategory" class="form-label">Category</label>
+                        <select #selectedcategory id="inputState" class="form-select inputfield">
+                          <option value="1">Category</option>
+                          <option *ngFor="let Category of categories" [value]="Category.name" >{{Category.name}}</option>
+                        </select>
+                    </div>
+            
+                  <div class="col-md-6 mybtn">
+                    <!-- <div class="d-grid gap-2"> -->
+                      <button type="submit"  class="btn btn-primary">Add Product</button>
+                    <!-- </div> -->
+                  </div>            
+                
+                </form>
+              
+              </div>
+
+        </div>
+
+
+
+    </div>
+</div>

@@ -1,0 +1,41 @@
+<!-- <p>shop works!</p> -->
+
+<div class="maincontainer">
+
+    <div class="leftcol">
+.
+    </div>
+
+    <div class="rightcol">
+
+        <div class="pageheading">
+            <h1>{{categoryheading}}</h1>
+        </div>
+
+        <div class="productgrid">
+            <div class="productcard" *ngFor="let product of products">
+        
+                <div class="productimage">
+                 <img src="{{product.image}}" alt="">
+                </div>
+        
+                <div class="productname">
+                    <p>{{product.name}}<p>
+                    <p>Rs.{{product.price}}</p>
+                </div>
+        
+                <div class="productdesc">
+                    {{product.description}}
+                </div>
+        
+                <div class="buybutton">
+                    <a [routerLink]="['/product',product.id]">Buy Now</a>
+                </div>
+               
+            </div>
+        </div>
+
+    </div>
+    
+
+</div>
