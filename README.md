@@ -2,9 +2,6 @@
 
 This project is a Full Stack Ecommerce Site Developed using Angular JS for frontend and Springboot for backend
 
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
 ## UI Screenshots
 
 ![home1](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/8373a211-d536-41de-872a-fc9f11857eee)
@@ -28,32 +25,4 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 ![sellerdash](https://github.com/Ayush2233/EcommerceFrontend/assets/91687009/f07f48dd-2bf8-428b-8fb2-4763e8d8fd4d)
 
 
-## Code scaffolding
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-
-
-
-
-
-
-
-
-
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
