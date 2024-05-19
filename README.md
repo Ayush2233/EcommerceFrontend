@@ -1,6 +1,6 @@
 # Ecommerceapp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.1.
+This project is a Full Stack Ecommerce Site Developed using Angular JS for frontend and Springboot for backend
 
 ## Development server
 
